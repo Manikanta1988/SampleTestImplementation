@@ -23,6 +23,9 @@ jobs:
           channel: 'stable'
           architecture: x64
 
+      - run: flutter pub get
+      - run: flutter pub analyze
+      - run: flutter test
       - run: flutter build apk --release --split-per-abi
       - run: |
           flutter build ios --no-codesign
